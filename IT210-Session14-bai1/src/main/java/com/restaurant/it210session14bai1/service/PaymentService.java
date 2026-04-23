@@ -32,3 +32,10 @@ public class PaymentService {
         }
     }
 }
+
+// Không có transaction → Hibernate auto xử lý kiểu "nửa mùa"
+// Khi không dùng transaction:
+// Hibernate có thể auto flush xuống DB
+// => Order đã bị update  
+// Nhưng Wallet thì:
+// Chưa chạy tới → chưa trừ tiền
